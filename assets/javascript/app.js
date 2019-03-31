@@ -28,3 +28,4 @@ $(document).ready(function(){
                  playerImage.addClass('plyImg')
 
                    playerImage.attr('src', results[i].images.fixed_height.url);
+                   playerImage.attr('data-still', results[i].images.fixed_height_still.url)
