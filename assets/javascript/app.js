@@ -59,3 +59,43 @@ $(document).ready(function(){
                                     });
                                 });
                         });
+                        var player = [''];
+
+                        $('#theButton').on('click', function(){
+                          var playerButton = $("#gif-input").val();
+                             //adds the new player
+
+                           var newButton = $("<button/>").addClass( "btn btn-info player").attr('data-name',playerButton).html(playerButton).css({'margin': '5px'});
+
+                           $("#playerbuttons").append(newButton);
+                           console.log("Work");
+
+                           queryURL = "https://api.giphy.com/v1/gifs/search?q=" + playerButton + "&api_key=dc6zaTOxFJmzC&limit=10";
+                           console.log(playerButton);
+
+                       $.ajax({
+                             url: queryURL,
+                             method: 'GET'
+                             })
+
+                        .done(function(response) {
+
+                           var results = response.data;
+
+                        for (var i = 0; i < results.length; i++) {
+
+                             var playerDiv = $('<div/>');
+
+                               var p =$('<p/>');
+
+                           p.text(results[i].rating);
+
+                              var playerImage = $('<img/>');
+
+                                playerImage.addClass('plyImg')
+
+                                  playerImage.attr('src', results[i].images.fixed_height_still.url);
+
+                                    playerImage.attr('data-still', results[i].images.fixed_height_still.url)
+
+                                     playerImage.attr('data-animate', results[i].images.fixed_height.url)
