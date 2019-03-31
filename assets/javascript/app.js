@@ -29,3 +29,13 @@ $(document).ready(function(){
 
                    playerImage.attr('src', results[i].images.fixed_height.url);
                    playerImage.attr('data-still', results[i].images.fixed_height_still.url)
+                   playerImage.attr('data-animate', results[i].images.fixed_height.url)
+
+                   .attr('data-state', 'still');
+
+                     playerDiv.append(p);
+
+                      playerDiv.append(playerImage);
+
+                       playerDiv.prependTo($('#gifs'));
+                             }
