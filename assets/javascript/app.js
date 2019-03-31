@@ -99,3 +99,40 @@ $(document).ready(function(){
                                     playerImage.attr('data-still', results[i].images.fixed_height_still.url)
 
                                      playerImage.attr('data-animate', results[i].images.fixed_height.url)
+                                     .attr('data-state', 'still');
+
+                                     playerDiv.append(p);
+
+                                       playerDiv.append(playerImage);
+
+                                         playerDiv.prependTo($('#gifs'));
+                                          }
+
+                                $('.plyImg').on('click', function() {
+
+                                       var state = $(this).attr('data-state');
+
+                                       console.log(this);
+
+                                if (state == 'still') {
+
+                                       $(this).attr('src', $(this).data('animate'));
+
+                                       $(this).attr('data-state', 'animate');
+
+                              } else {
+
+                                       $(this).attr('src', $(this).data('still'));
+
+                                       $(this).attr('data-state', 'still');
+                                              }
+                                          });
+                                      });
+
+                              $("#gif-input").val("");
+
+                                return false;
+
+                            })
+
+                            });
