@@ -39,3 +39,23 @@ $(document).ready(function(){
 
                        playerDiv.prependTo($('#gifs'));
                              }
+                             $('.plyImg').on('click', function() {
+
+                              var state = $(this).attr('data-state');
+                                  console.log(this);
+
+                              if (state == 'still') {
+
+                                 $(this).attr('src', $(this).data('animate'));
+
+                                 $(this).attr('data-state', 'animate');
+
+                             } else {
+
+                                 $(this).attr('src', $(this).data('still'));
+
+                                 $(this).attr('data-state', 'still');
+                                        }
+                                    });
+                                });
+                        });
