@@ -1,3 +1,5 @@
+https://jmillan13.github.io/GifTastic/
+
 # GifTastic
 
 I used the GIPHY API to make a dynamic web page that populates with gifs of my choice. To finish this task, I called the GIPHY API and used JavaScript and jQuery to change the HTML of my site.
